@@ -1,14 +1,81 @@
 body {
+  padding: 0;
   margin: 0;
-  background-color: #fef9f4;
+  position: relative; /* add this if missing */
+  height: 100vh;
+
+  background-color: #fdf6f0;
+  position: relative;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  font-family: 'Cormorant Garamond', serif;
+  color: #5e4b3c;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('assets/images/pixelated_forest_background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: brightness(0.65) saturate(1.1) contrast(0.9); /* subtle mood filters only */
+  z-index: -1;
+}
+
+#bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0; /* use inset instead of just height for full coverage */
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  background-color: rgba(255, 250, 243, 0.055); /* creamy glass tint */
+}
+
+
+#bg > img {
+  height: 100%;
+  filter: brightness(0.90) saturate(1.1) contrast(0.9); /* subtle mood filters only */
+
+}
+
+
+#content {
+  z-index: 20;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 canvas {
-  border: 4px solid #7c6f64;
-  background-color: #e8e5d1;
+  border: 8px groove #a6785e; /* ornate wooden frame vibes */
+  background-color: #fefae0; /* sun-faded parchment */
   image-rendering: pixelated;
+
+  box-shadow: 0 6px 12px rgba(108, 91, 74, 0.3); /* deeper soft shadow */
+  border-radius: 16px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  
+  outline: 2px dashed #d9c2a3; /* adds a fabric-stitched detail */
+  outline-offset: 6px;
+}
+
+canvas:hover {
+  border-color: #c9a67d; /* warm honey tan */
+  background-color: #fffbe6; /* glowy warmth */
+  box-shadow: 0 8px 20px rgba(165, 140, 120, 0.4);
+  cursor: url('assets/images/brownHeart.png') 40 40 , auto;
 }
