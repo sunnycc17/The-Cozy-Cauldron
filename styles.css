@@ -77,5 +77,5 @@ canvas:hover {
   border-color: #c9a67d; /* warm honey tan */
   background-color: #fffbe6; /* glowy warmth */
   box-shadow: 0 8px 20px rgba(165, 140, 120, 0.4);
-  cursor: url('assets/images/brownHeart.png') 40 40 , auto;
+  cursor: url('assets/images/crusor.png') 40 40 , auto;
 }
