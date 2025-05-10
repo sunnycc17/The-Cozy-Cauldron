@@ -3,10 +3,8 @@ body {
   margin: 0;
   position: relative; /* add this if missing */
   height: 100vh;
-
   background-color: #fdf6f0;
   position: relative;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -167,5 +165,37 @@ canvas:hover {
   #bg,
   canvas {
     display: none !important;
+  }
+}
+
+/* 🌄 Mobile Landscape Mode (height is smaller than width) */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  body {
+    font-size: 15px;
+    padding: 0 20px;
+  }
+
+  canvas {
+    width: 80vw;
+    height: auto;
+    padding: 6px;
+    border-width: 6px;
+    outline-offset: 4px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #bg > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  #content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
